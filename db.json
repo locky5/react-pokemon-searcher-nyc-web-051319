@@ -7360,6 +7360,54 @@
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
       },
       "id": 207
+    },
+    {
+      "name": "Blissey",
+      "stats": [
+        {
+          "value": 150,
+          "name": "special-attack"
+        },
+        {
+          "value": 150,
+          "name": "speed"
+        },
+        {
+          "value": 150,
+          "name": "defense"
+        },
+        {
+          "value": 150,
+          "name": "special-defense"
+        },
+        {
+          "value": 150,
+          "name": "attack"
+        },
+        {
+          "value": "20000",
+          "name": "hp"
+        }
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+      },
+      "id": 208
+    },
+    {
+      "name": "Bulbasaur",
+      "stats": [
+        {
+          "value": "30",
+          "name": "hp"
+        }
+      ],
+      "sprites": {
+        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+      },
+      "id": 209
     }
   ]
 }

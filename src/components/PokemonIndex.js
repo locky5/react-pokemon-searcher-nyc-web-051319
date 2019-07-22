@@ -31,6 +31,12 @@ class PokemonPage extends React.Component {
     })
   }
 
+  addPokemon = (pokemon) => {
+    this.setState({
+      data: pokemon
+    })
+  }
+
   render() {
     return (
       <div>
@@ -40,7 +46,7 @@ class PokemonPage extends React.Component {
         <br />
         {this.state.data ? <PokemonCollection data={this.state.data} query={this.state.query}/> : <LoadingPage/>}
         <br />
-        <PokemonForm />
+        <PokemonForm data={this.state.data} addPokemon={this.addPokemon}/>
       </div>
     )
   }

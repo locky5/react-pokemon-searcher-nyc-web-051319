@@ -24,26 +24,6 @@ class PokemonForm extends React.Component {
         name: this.state.name,
         stats: [
           {
-            value: 150,
-            name: 'special-attack'
-          },
-          {
-            value: 150,
-            name: 'speed'
-          },
-          {
-            value: 150,
-            name: 'defense'
-          },
-          {
-            value: 150,
-            name: 'special-defense'
-          },
-          {
-            value: 150,
-            name: 'attack'
-          },
-          {
             value: this.state.hp,
             name: 'hp'
           }
@@ -54,29 +34,15 @@ class PokemonForm extends React.Component {
         }
       })
     })
+      .then(res => res.json())
+      .then(pokemon => {
+        this.props.addPokemon([pokemon, ...this.props.data])
+      })
   }
 
-  newName = (event) => {
+  handleChange = (event) => {
     this.setState({
-      name: event.target.value
-    })
-  }
-
-  newHp = (event) => {
-    this.setState({
-      hp: event.target.value
-    })
-  }
-
-  newFrontImage = (event) => {
-    this.setState({
-      frontUrl: event.target.value
-    })
-  }
-
-  newBackImage = (event) => {
-    this.setState({
-      backUrl: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -86,10 +52,10 @@ class PokemonForm extends React.Component {
         <h3>Add a Pokemon!</h3>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group widths="equal">
-            <Form.Input fluid label="Name" placeholder="Name" name="name" onChange={this.newName} />
-            <Form.Input fluid label="hp" placeholder="hp" name="hp" onChange={this.newHp} />
-            <Form.Input fluid label="Front Image URL" placeholder="url" name="frontUrl" onChange={this.newFrontImage} />
-            <Form.Input fluid label="Back Image URL" placeholder="url" name="backUrl" onChange={this.newBackImage} />
+            <Form.Input fluid label="Name" placeholder="Name" name="name" onChange={this.handleChange} />
+            <Form.Input fluid label="hp" placeholder="hp" name="hp" onChange={this.handleChange} />
+            <Form.Input fluid label="Front Image URL" placeholder="url" name="frontUrl" onChange={this.handleChange} />
+            <Form.Input fluid label="Back Image URL" placeholder="url" name="backUrl" onChange={this.handleChange} />
           </Form.Group>
           <Form.Button>Submit</Form.Button>
         </Form>
